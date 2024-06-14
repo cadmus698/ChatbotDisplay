@@ -1,6 +1,7 @@
 package com.cadmus698;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import org.jibble.jmegahal.JMegaHal;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -27,19 +28,22 @@ public class Brownie extends JFrame{
                 questions[2] = textField3.getText();
                 questions[3] = textField4.getText();
                 questions[4] = textField5.getText();
-                for(int i = 0; i < 5; i++){
+                for(int i = 0; i < 5; i++) {
                     answers[i][0] = questions[i];
                 }
+                MegaHalWindow gui = new MegaHalWindow();
+                gui.run();
             }
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         FlatDarkLaf.setup();
         Brownie gui = new Brownie();
         gui.setDefaultCloseOperation(EXIT_ON_CLOSE);
         gui.setTitle("Chatbot Demo");
         gui.setVisible(true);
         gui.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
     }
 }
